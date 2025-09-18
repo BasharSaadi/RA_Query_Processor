@@ -5,8 +5,7 @@ A simple Python implementation of a relational algebra system that can parse tex
 ## Author
 
 **Name:** Bashar Saadi
-**Course:** COMP3005
-**Assignment:** Bouns Assignment #1
+COMP3005 - Bouns Assignment #1
 
 ## Features
 

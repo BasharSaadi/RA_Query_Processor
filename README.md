@@ -1,11 +1,11 @@
 # Relational Algebra Query Processor
+## COMP3005 - Bouns Assignment #1
 
 A simple Python implementation of a relational algebra system that can parse text-based relations and execute relational algebra queries.
 
 ## Author
 
 **Name:** Bashar Saadi
-COMP3005 - Bouns Assignment #1
 
 ## Features
 

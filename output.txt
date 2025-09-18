@@ -1,0 +1,108 @@
+Query 1: select Age > 30 (Employees)
+========================================
+Result = {EID, Name, Age
+  "E1", "John", 32
+}
+
+Query 2: select Age = 28 (Employees)
+========================================
+Result = {EID, Name, Age
+  "E2", "Alice", 28
+}
+
+Query 3: select DName = Engineering (Departments)
+========================================
+Result = {DID, DName
+  "D3", "Engineering"
+}
+
+Query 4: project Name (Employees)
+========================================
+Result = {Name
+  "John"
+  "Alice"
+  "Bob"
+  "Bashar"
+}
+
+Query 5: project EID, Name (Employees)
+========================================
+Result = {EID, Name
+  "E1", "John"
+  "E2", "Alice"
+  "E3", "Bob"
+  "E4", "Bashar"
+}
+
+Query 6: project DName (Departments)
+========================================
+Result = {DName
+  "Sales"
+  "Marketing"
+  "Engineering"
+}
+
+Query 7: join Employees WorksFor
+========================================
+Result = {EID, Name, Age, DID
+  "E1", "John", 32, "D1"
+  "E2", "Alice", 28, "D1"
+  "E3", "Bob", 29, "D2"
+  "E4", "Bashar", 26, "D3"
+}
+
+Query 8: join WorksFor Departments
+========================================
+Result = {EID, DID, DName
+  "E1", "D1", "Sales"
+  "E2", "D1", "Sales"
+  "E3", "D2", "Marketing"
+  "E4", "D3", "Engineering"
+}
+
+Query 9: union Employees Students
+========================================
+Result = {EID, Name, Age
+  "E1", "John", 32
+  "E2", "Alice", 28
+  "E3", "Bob", 29
+  "E4", "Bashar", 26
+  "E5", "Dave", 24
+  "E6", "Emma", 26
+}
+
+Query 10: intersection Employees Students
+========================================
+Result = {EID, Name, Age
+  "E2", "Alice", 28
+  "E4", "Bashar", 26
+}
+
+Query 11: difference Employees Students
+========================================
+Result = {EID, Name, Age
+  "E1", "John", 32
+  "E3", "Bob", 29
+}
+
+Query 12: difference Students Employees
+========================================
+Result = {EID, Name, Age
+  "E5", "Dave", 24
+  "E6", "Emma", 26
+}
+
+Query 13: project Name (select Age > 28 (Employees))
+========================================
+Result = {Name
+  "John"
+  "Bob"
+}
+
+Query 14: select Age > 28 (project Name, Age (Employees))
+========================================
+Result = {Name, Age
+  "John", 32
+  "Bob", 29
+}
+

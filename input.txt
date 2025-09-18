@@ -1,0 +1,55 @@
+Employees (EID, Name, Age) = {
+  E1, John, 32
+  E2, Alice, 28
+  E3, Bob, 29
+  E4, Bashar, 26
+}
+
+Departments (DID, DName) = {
+  D1, Sales
+  D2, Marketing
+  D3, Engineering
+}
+
+WorksFor (EID, DID) = {
+  E1, D1
+  E2, D1
+  E3, D2
+  E4, D3
+}
+
+Students (EID, Name, Age) = {
+  E2, Alice, 28
+  E5, Dave, 24
+  E4, Bashar, 26
+  E6, Emma, 26
+}
+
+# Test Selection Operation
+Query: select Age > 30 (Employees)
+Query: select Age = 28 (Employees)
+Query: select DName = Engineering (Departments)
+
+# Test Projection Operation
+Query: project Name (Employees)
+Query: project EID, Name (Employees)
+Query: project DName (Departments)
+
+# Test Join Operation
+Query: join Employees WorksFor
+Query: join WorksFor Departments
+
+# Test Union Operation
+Query: union Employees Students
+
+# Test Intersection Operation
+Query: intersection Employees Students
+
+# Test Difference Operation
+Query: difference Employees Students
+Query: difference Students Employees
+
+# Test Commutativity of Selection and Projection
+Query: project Name (select Age > 28 (Employees))
+Query: select Age > 28 (project Name, Age (Employees))
+

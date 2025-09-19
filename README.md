@@ -91,7 +91,7 @@ Result = {Name
 
 ## File Structure
 
-- `relational_algebra.py` - Main system implementation
+- `query_processor.py` - Main system implementation
 - `input.txt` - Input relations and queries
 - `output.txt` - Generated query results
 - `README.md` - This documentation

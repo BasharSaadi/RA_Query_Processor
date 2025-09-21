@@ -20,7 +20,7 @@ A simple Python implementation of a relational algebra system that can parse tex
 ## How to Use
 
 1. Define your relations and queries in `input.txt`
-2. Run the system: `python3 relational_algebra.py`
+2. Run the system: `python3 query_procesor.py`
 3. View results in `output.txt`
 
 ## Input Format
